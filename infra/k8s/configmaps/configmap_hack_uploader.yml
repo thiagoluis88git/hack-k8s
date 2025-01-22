@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cm-uploader
+data:
+  POSTGRES_USER: hack_db_user
+  POSTGRES_DB: hack_db_tracking
+  DB_HOST: fastfood-database.czha89an8cfd.us-east-1.rds.amazonaws.com
+  DB_PORT: "5432"
+  AWS_REGION: us-east-1

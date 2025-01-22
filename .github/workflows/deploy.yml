@@ -1,0 +1,57 @@
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+name: Deploy Video Process in EKS
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.HACK_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.HACK_AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.HACK_AWS_SESSION_TOKEN }}
+          aws-region: us-east-1
+
+      - name: Retrieve the secret and decode it to a KUBE_CONFIG_BASE64
+        run: |
+          mkdir ${HOME}/.kube
+          echo ${{ secrets.KUBE_CONFIG_BASE64 }} | base64 --decode > ${HOME}/.kube/config
+          cat ${HOME}/.kube/config
+
+      - name: Installing Helm
+        run: |
+          curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+          chmod 700 get_helm.sh
+          ./get_helm.sh
+
+      - name: Installing Secrets Store CSI Drive
+        run: |
+          helm repo add secrets-store-csi-driver https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
+          helm upgrade -i -n kube-system --set syncSecret.enabled=true csi-secrets-store secrets-store-csi-driver/secrets-store-csi-driver
+          kubectl apply -f https://raw.githubusercontent.com/aws/secrets-store-csi-driver-provider-aws/main/deployment/aws-provider-installer.yaml
+
+      - name: Update kube config
+        run: aws eks update-kubeconfig --region us-east-1 --name fastfood-cluster
+    
+      - name: Deploy to EKS
+        run: |
+          # kubectl apply -f infra/k8s/ssm/
+          kubectl apply -k infra/k8s/secret/
+          kubectl apply -f infra/k8s/configmaps/
+          kubectl apply -f infra/k8s/metrics/
+          kubectl apply -f infra/k8s/hpa/
+          kubectl apply -f infra/k8s/deployments/
+
+
