@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: cm-uploader
 data:
-  POSTGRES_USER: hack_db_user
-  POSTGRES_DB: hack_db_tracking
+  DB_USER: hack_db_user
+  DB_NAME: hack_db_tracking
   DB_HOST: hack-database.czha89an8cfd.us-east-1.rds.amazonaws.com
   DB_PORT: "5432"
   AWS_REGION: us-east-1
