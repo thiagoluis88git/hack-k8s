@@ -3,9 +3,9 @@ kind: Service
 metadata:
   annotations:
     service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
-  name: service-fastfood-database
+  name: service-hack-database
   labels:
-    app: service-fastfood-database
+    app: service-hack-database
 spec:
   type: NodePort
   ports:
@@ -34,7 +34,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-fastfood-database
+  name: deployment-hack-database
 spec:
   replicas: 1
   selector:
@@ -46,7 +46,7 @@ spec:
         app: database
     spec:
       containers:
-        - name: fastfood-database
+        - name: hack-database
           image: 'postgres:16-alpine'
           imagePullPolicy: IfNotPresent
           ports:

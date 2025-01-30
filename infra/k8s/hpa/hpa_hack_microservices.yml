@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hpa-fastfood-customer
+  name: hpa-hack-customer
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: fastfood-customer
+    name: hack-customer
   minReplicas: 1
   maxReplicas: 2
   metrics:
@@ -22,12 +22,12 @@ spec:
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hpa-fastfood-orders
+  name: hpa-hack-orders
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: fastfood-orders
+    name: hack-orders
   minReplicas: 1
   maxReplicas: 2
   metrics:
@@ -43,12 +43,12 @@ spec:
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hpa-fastfood-payment
+  name: hpa-hack-payment
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: fastfood-payment
+    name: hack-payment
   minReplicas: 1
   maxReplicas: 2
   metrics:
