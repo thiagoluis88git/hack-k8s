@@ -5,13 +5,13 @@ metadata:
 data:
   DB_USER: hack_db_user
   DB_NAME: hack_db_tracking
-  DB_HOST: hack-database.czha89an8cfd.us-east-1.rds.amazonaws.com
+  DB_HOST: hack-database.cy5g0rsjaa0v.us-east-1.rds.amazonaws.com
   DB_PORT: "5432"
   AWS_REGION: us-east-1
-  AWS_COGNITO_USER_POOL_ID: us-east-1_PRhzNMLwb
-  AWS_COGNITO_CLIENT_ID: 6hvia6b1uh4583ti2upjapts3p
+  AWS_COGNITO_USER_POOL_ID: us-east-1_UXwRLuevL
+  AWS_COGNITO_CLIENT_ID: s9gkst2d9cb8etd1fl3i4o607
   AWS_COGNITO_GROUP_USER: group-users
   AWS_S3_BUCKET: hack-video-processing-bucket
   AWS_S3_BUCKET_ZIP: hack-processed-zip-bucket
-  VIDEO_PROCESSING_INPUT_QUEUE: https://sqs.us-east-1.amazonaws.com/199710252834/video-processing-input-queue
-  VIDEO_PROCESSED_OUTPUT_QUEUE: https://sqs.us-east-1.amazonaws.com/199710252834/video-processed-output-queue
+  VIDEO_PROCESSING_INPUT_QUEUE: https://sqs.us-east-1.amazonaws.com/619104548756/video-processing-input-queue
+  VIDEO_PROCESSED_OUTPUT_QUEUE: https://sqs.us-east-1.amazonaws.com/619104548756/video-processed-output-queue
