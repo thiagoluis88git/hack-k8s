@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: hack-uploader
-        image: thiagoluis88/hack-video-uploader:1.0.3
+        image: thiagoluis88/hack-video-uploader:1.0.4
         # volumeMounts:
         # - name: secrets-store-inline
         #   mountPath: "/mnt/secrets-store"
