@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: hack-video-processing
-        image: thiagoluis88/hack-video-processing:1.0.5
+        image: thiagoluis88/hack-video-processing:1.0.6
         # volumeMounts:
         # - name: secrets-store-inline
         #   mountPath: "/mnt/secrets-store"
