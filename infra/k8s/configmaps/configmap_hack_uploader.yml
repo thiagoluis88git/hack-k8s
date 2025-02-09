@@ -8,8 +8,8 @@ data:
   DB_HOST: hack-database.cy5g0rsjaa0v.us-east-1.rds.amazonaws.com
   DB_PORT: "5432"
   AWS_REGION: us-east-1
-  AWS_COGNITO_USER_POOL_ID: us-east-1_UXwRLuevL
-  AWS_COGNITO_CLIENT_ID: s9gkst2d9cb8etd1fl3i4o607
+  AWS_COGNITO_USER_POOL_ID: us-east-1_Sm2X4gK8t
+  AWS_COGNITO_CLIENT_ID: 21dh8e8om80v4gtchtioer7q0t
   AWS_COGNITO_GROUP_USER: group-users
   AWS_S3_BUCKET: hack-video-processing-bucket
   AWS_S3_BUCKET_ZIP: hack-processed-zip-bucket
