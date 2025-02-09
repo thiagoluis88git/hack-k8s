@@ -16,10 +16,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install FFMPEG and FFPROBE
-        uses: FedericoCarboni/setup-ffmpeg@v3
-        id: setup-ffmpeg
-        
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
