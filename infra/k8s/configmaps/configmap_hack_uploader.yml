@@ -15,3 +15,4 @@ data:
   AWS_S3_BUCKET_ZIP: hack-processed-zip-bucket
   VIDEO_PROCESSING_INPUT_QUEUE: https://sqs.us-east-1.amazonaws.com/619104548756/video-processing-input-queue
   VIDEO_PROCESSED_OUTPUT_QUEUE: https://sqs.us-east-1.amazonaws.com/619104548756/video-processed-output-queue
+  VIDEO_PROCESSED_ERROR_QUEUE: https://sqs.us-east-1.amazonaws.com/619104548756/video-processed-error-queue
