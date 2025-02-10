@@ -14,7 +14,7 @@ The Fast food project uses `AWS Cloud` to host its software components.
 
 ## AWS VPC Description
 
-To follow some of the best practices of network security in Cloud, the FastFood API uses the Private and Public network strategy to configure the `VPC` on **AWS**. This configuration can be created via `AWS Cloud Formation` using [this YAML file](https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml). The **most important** aspect for this *hybrid* solution is:
+To follow some of the best practices of network security in Cloud, the Hackathon Video Uploader uses the Private and Public network strategy to configure the `VPC` on **AWS**. This configuration can be created via `AWS Cloud Formation` using [this YAML file](https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml). The **most important** aspect for this *hybrid* solution is:
 
 - Software components are stored in `Private Subnets`
 - Infrastructure components, such as `NAT Gateways` are stored in `Public Subnets`
@@ -24,7 +24,7 @@ To follow some of the best practices of network security in Cloud, the FastFood 
 <img width="602" alt="AWS infra" src="https://github.com/user-attachments/assets/178cafb0-7552-41e7-b826-40795f595145">
 
 
-With this approach the **FastFood API** is secure and safe from possible internet attackers.
+With this approach the **Hackathon Video Uploader** is secure and safe from possible internet attackers.
 
 
 ### AWS RDS ###
@@ -33,4 +33,4 @@ This API uses the `AWS RDS` with **PostgreSQL** for relational database data sav
 
 ## AWS EKS
 
-The main AWS product used in FastFood project is `AWS EKS`. To know more about this configuration, read: [Kubernetes README](k8s/README.md)
+The main AWS product used in Hackathon Video Upoader project is `AWS EKS`. To know more about this configuration, read: [Kubernetes README](k8s/README.md)
